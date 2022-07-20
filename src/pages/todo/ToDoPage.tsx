@@ -12,7 +12,7 @@ import {
 } from '../../store/actions';
 import Service from '../../service';
 import {Todo, TodoStatus} from '../../models/todo';
-import { isTodoCompleted } from '../../utils';
+import TodoItem from './todo-item/Todo-Item';
 type EnhanceTodoStatus = TodoStatus | 'ALL';
 
 
@@ -150,37 +150,15 @@ const ToDoPage = () => {
                         .filter(todo => isShowing(todo.status))
                         .map((todo, index) => {
                         return (
-                            <div key={index} className="todo__item">
-                                <input
-                                    type="checkbox"
-                                    checked={isTodoCompleted(todo)}
-                                    onChange={(e) => onUpdateTodoStatus(e, todo.id)}
-                                />
-                                {
-                                    todo.id === editingTodoId ? (
-                                        <input
-                                            type='text'
-                                            value={todo.name}
-                                            autoFocus
-                                            onBlur={() => toggleEditTodo('')}
-                                            onChange={(e) => onUpdateTodo(e, todo.id)}
-                                        />
-                                    ) : (
-                                        <p 
-                                            className="todo__name"
-                                            onDoubleClick={() => toggleEditTodo(todo.id)}
-                                        >
-                                            {todo.name}
-                                        </p>
-                                    )
-                                }
-                                <button
-                                    className="button button--danger todo__delete"
-                                    onClick={() => onDeleteTodo(todo.id)}
-                                >
-                                    X
-                                </button>
-                            </div>
+                            <TodoItem
+                                key={todo.id}
+                                todo={todo}
+                                onUpdateTodoStatus={onUpdateTodoStatus}
+                                editingTodoId={editingTodoId}
+                                toggleEditTodo={toggleEditTodo}
+                                onUpdateTodo={onUpdateTodo}
+                                onDeleteTodo={onDeleteTodo}
+                            />
                         );
                     })
                 }
