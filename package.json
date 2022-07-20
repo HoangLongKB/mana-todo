@@ -6,7 +6,6 @@
   "dependencies": {
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "axios": "^0.19.2",
     "cross-env": "^7.0.2",
@@ -39,6 +38,8 @@
     ]
   },
   "devDependencies": {
-    "@types/shortid": "^0.0.29"
+    "@types/react": "^16.14.28",
+    "@types/shortid": "^0.0.29",
+    "sass": "^1.53.0"
   }
 }

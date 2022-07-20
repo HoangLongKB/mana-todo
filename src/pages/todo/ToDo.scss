@@ -1,0 +1,92 @@
+$primary-color: #1976d2;
+$danger-color: #ef5350;
+$warning-color: #ff9800;
+$success-color: #4caf50;
+
+.ToDo__container {
+  border: 1px solid rgba(0,0,0, 0.13);
+  border-radius: 8px;
+  width: 500px;
+  margin-top: 5rem;
+  padding: 24px;
+  box-shadow: 2px 2px 1px rgba(0,0,0, 0.09),
+              3px 2px 3px rgba(0,0,0, 0.05);
+              
+  .todo {
+    &__title {
+      display: flex;
+      margin-top: 1rem;
+      p {
+        font-weight: 500;
+      }
+    }
+    &__toolbar {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+
+    &__tabs {
+      display: flex;
+      justify-content: center;
+      *{
+        &:not(:last-child) {
+          margin-right: 8px;
+        }
+      }
+    }
+
+    &__action-bar {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    &__creation {
+      display: flex;
+    }
+    
+    &__input {
+      flex: 1 1;
+    }
+    
+    &__list {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1.5rem;
+    }
+
+    &__name {
+      width: 24rem;
+      text-align: start;
+      margin-left: 1rem;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      input[type=text] {
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid lightgray;
+        width: 24rem;
+        cursor: inherit;
+      }
+      span {
+        flex: 1 1;
+        text-align: left;
+        margin-left: 8px;
+      }
+    }
+
+    &__delete {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      width: 2rem;
+      height: 2rem;
+    }
+
+  }
+
+}
